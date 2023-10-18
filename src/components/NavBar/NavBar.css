@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar_logged-in {
+  flex-basis: 675px;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__link_logged-in {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.navbar__link_login {
+  min-width: 76px;
+  min-height: 32px;
+  border-radius: 3px;
+  background-color: #2BE080;
+  color: #000;
+}
+
+.navbar__link_account {
+  margin-left: auto;
+  min-width: 100px;
+  min-height: 32px;
+  background-color: #F9F9F9;
+  font-size: 14px;
+  border-radius: 20px;
+  color: #000;
+}
+
+.navbar__link_active {
+  font-weight: 500;
+}
