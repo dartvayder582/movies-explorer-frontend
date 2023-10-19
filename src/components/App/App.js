@@ -5,6 +5,8 @@ import { Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-
 import PageNotFound from '../PageNotFound';
 import Header from '../Header/Header';
 import Promo from '../Promo/Promo';
+import Login from '../auth/Login';
+import Register from '../auth/Register';
 // import Login from './auth/Login';
 // import Register from './auth/Register';
 import './App.css';
@@ -51,6 +53,17 @@ function App() {
               isLoggedIn={isLoggedIn}
               location={location} />
 
+          } />
+        <Route
+          path='/signup'
+          element={
+            <Register />
+
+          } />
+        <Route
+          path='/signin'
+          element={
+            <Login />
           } />
       </Routes>
 

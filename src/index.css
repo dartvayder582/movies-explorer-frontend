@@ -18,6 +18,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.content {
+  height: 100vh;
+}
+
 .link-style {
   text-decoration: none;
   transition: opacity 0.2s ease;

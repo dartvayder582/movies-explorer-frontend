@@ -1,0 +1,10 @@
+.api-error-message {
+  padding: 0;
+  margin: 24px 0 20px;
+  min-height: 26px;
+  color: #FF004C;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+}
