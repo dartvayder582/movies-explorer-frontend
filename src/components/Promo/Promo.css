@@ -1,0 +1,24 @@
+.promo {
+  max-width: 100%;
+  min-height: 524px;
+  background-color: #465DFF;
+  background-image: url('../../images/promo-banner.svg');
+  background-repeat: no-repeat;
+  background-size: 320px auto;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo__title {
+  padding: 0;
+  margin: 0;
+  max-width: 730px;
+  color: #fff;
+  letter-spacing: -4%;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+}

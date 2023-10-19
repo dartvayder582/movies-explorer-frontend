@@ -13,9 +13,92 @@ const NavBar = React.memo(({
 
   // const location = useLocation()
   return (
-    <nav className={`navbar ${isLoggedIn ? 'navbar_logged-in' : ''}`}>
+    // <Routes>
+    //   <Route
+    //     path='/'
+    //     element={
+    //       <>
+    //         {isLoggedIn ?
+    //           <nav className='navbar navbar_logged-in'>
+    //             <Link
+    //               to='/movies'
+    //               type="button"
+    //               className={
+    //                 `link-style
+    //                 navbar__link
+    //                 navbar__link_theme_blue
+    //                 navbar__link_logged-in
+    //           ${location.pathname === '/movies' ? 'navbar__link_active' : ''}`}
+    //             >Фильмы</Link>
+    //             <Link
+    //               to='/saved-movies'
+    //               type="button"
+    //               className={
+    //                 `link-style
+    //                 navbar__link
+    //                 navbar__link_theme_blue
+    //                 navbar__link_logged-in
+    //           ${location.pathname === '/saved-movies' ? 'navbar__link_active' : ''}`}
+    //             >Сохранённые фильмы</Link>
+    //             <Link
+    //               to='/profile'
+    //               type="button"
+    //               className={`link-style navbar__link navbar__link_account`}
+    //             >Аккаунт</Link>
+    //           </nav>
+    //           :
+    //           <nav className='navbar'>
+    //             <Link
+    //               to='/signup'
+    //               type="button"
+    //               className={`link-style navbar__link navbar__link_theme_blue`}
+    //             >Регистрация</Link>
+    //             <Link
+    //               to='/signin'
+    //               type="button"
+    //               className={`link-style navbar__link navbar__link_login`}
+    //             >Войти</Link>
+    //           </nav>}
+
+    //       </>
+
+    //     } />
+    //   <Route
+    //     path='/movies'
+    //     element={
+    //       <nav className='navbar navbar_logged-in'>
+    //         <Link
+    //           to='/movies'
+    //           type="button"
+    //           className={
+    //             `link-style
+    //             navbar__link
+    //             navbar__link_theme_white
+    //             navbar__link_logged-in
+    //           ${location.pathname === '/movies' ? 'navbar__link_active' : ''}`}
+    //         >Фильмы</Link>
+    //         <Link
+    //           to='/saved-movies'
+    //           type="button"
+    //           className={
+    //             `link-style
+    //             navbar__link
+    //             navbar__link_theme_white
+    //             navbar__link_logged-in
+    //           ${location.pathname === '/saved-movies' ? 'navbar__link_active' : ''}`}
+    //         >Сохранённые фильмы</Link>
+    //         <Link
+    //           to='/profile'
+    //           type="button"
+    //           className={`link-style navbar__link navbar__link_account`}
+    //         >Аккаунт</Link>
+    //       </nav>
+    //     } />
+    // </Routes>
+
+    <>
       {isLoggedIn ?
-        <>
+        <nav className='navbar'>
           <Link
             to='/movies'
             type="button"
@@ -23,6 +106,7 @@ const NavBar = React.memo(({
               `link-style
               navbar__link
               navbar__link_logged-in
+              ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
               ${location.pathname === '/movies' ? 'navbar__link_active' : ''}`}
           >Фильмы</Link>
           <Link
@@ -32,29 +116,33 @@ const NavBar = React.memo(({
               `link-style
               navbar__link
               navbar__link_logged-in
+              ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
               ${location.pathname === '/saved-movies' ? 'navbar__link_active' : ''}`}
           >Сохранённые фильмы</Link>
           <Link
-            to='/signin'
+            to='/profile'
             type="button"
             className={`link-style navbar__link navbar__link_account`}
           >Аккаунт</Link>
-        </>
+        </nav>
         :
-        <>
+        <nav className='navbar navbar_logged-in'>
           <Link
             to='/signup'
             type="button"
-            className={`link-style navbar__link`}
+            className='link-style navbar__link navbar__link_theme_blue'
           >Регистрация</Link>
           <Link
             to='/signin'
             type="button"
-            className={`link-style navbar__link navbar__link_login`}
+            className='link-style navbar__link navbar__link_login'
           >Войти</Link>
-        </>
+        </nav>
       }
-    </nav>
+
+
+
+    </>
 
 
 

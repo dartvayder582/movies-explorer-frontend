@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react';
 import { Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import PageNotFound from '../PageNotFound';
 import Header from '../Header/Header';
+import Promo from '../Promo/Promo';
 // import Login from './auth/Login';
 // import Register from './auth/Register';
 import './App.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
   // const navigate = useNavigate();
 
@@ -19,12 +20,15 @@ function App() {
         <Route
           path='/'
           element={
-            <Header
-              isLoggedIn={isLoggedIn}
-              location={location} />
+            <>
+              <Header
+                isLoggedIn={isLoggedIn}
+                location={location} />
+              <Promo />
+            </>
 
           } />
-          <Route
+        <Route
           path='/movies'
           element={
             <Header
@@ -32,8 +36,16 @@ function App() {
               location={location} />
 
           } />
-          <Route
+        <Route
           path='/saved-movies'
+          element={
+            <Header
+              isLoggedIn={isLoggedIn}
+              location={location} />
+
+          } />
+        <Route
+          path='/profile'
           element={
             <Header
               isLoggedIn={isLoggedIn}

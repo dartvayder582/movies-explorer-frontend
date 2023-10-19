@@ -1,5 +1,9 @@
 .header {
   max-width: 100%;
+  background-color: #fff;
+}
+
+.header_theme_blue {
   background-color: #465DFF;
 }
 
