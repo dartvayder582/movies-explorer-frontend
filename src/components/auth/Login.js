@@ -28,7 +28,7 @@ const Login = ({ isLoad, onLogin }) => {
   }
 
   return (
-    <div className="authentication content">
+    <div className="authentication content content_centered_vertically">
       <Logo />
       <form className="form" onSubmit={handleSubmit}>
         <h2 className="form__heading">Рады видеть!</h2>

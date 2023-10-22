@@ -1,4 +1,11 @@
 .logo {
+  flex-basis: 465px;
+  flex-shrink: 1;
+  /* display: flex;
+  align-items: flex-end; */
+}
+
+.logo__item {
   display: block;
   background-image: url('../../images/logo.svg');
   width: 38px;

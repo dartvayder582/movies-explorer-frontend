@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 // import AnimatedNavbar from './animation/AnimatedNavbar';
 // import { AnimatePresence } from 'framer-motion';
 import './NavBar.css'
@@ -98,45 +98,47 @@ const NavBar = React.memo(({
 
     <>
       {isLoggedIn ?
-        <nav className='navbar'>
-          <Link
+        <nav className='navbar navbar_logged-in'>
+          <NavLink
             to='/movies'
             type="button"
             className={
-              `link-style
+              ({ isActive }) =>
+                `link-style
               navbar__link
               navbar__link_logged-in
               ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
-              ${location.pathname === '/movies' ? 'navbar__link_active' : ''}`}
-          >Фильмы</Link>
-          <Link
+              ${isActive ? 'navbar__link_active' : ''}`}
+          >Фильмы</NavLink>
+          <NavLink
             to='/saved-movies'
             type="button"
             className={
-              `link-style
+              ({ isActive }) =>
+                `link-style
               navbar__link
               navbar__link_logged-in
               ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
-              ${location.pathname === '/saved-movies' ? 'navbar__link_active' : ''}`}
-          >Сохранённые фильмы</Link>
-          <Link
+              ${isActive ? 'navbar__link_active' : ''}`}
+          >Сохранённые фильмы</NavLink>
+          <NavLink
             to='/profile'
             type="button"
             className={`link-style navbar__link navbar__link_account`}
-          >Аккаунт</Link>
+          >Аккаунт</NavLink>
         </nav>
         :
-        <nav className='navbar navbar_logged-in'>
-          <Link
+        <nav className='navbar'>
+          <NavLink
             to='/signup'
             type="button"
             className='link-style navbar__link navbar__link_theme_blue'
-          >Регистрация</Link>
-          <Link
+          >Регистрация</NavLink>
+          <NavLink
             to='/signin'
             type="button"
             className='link-style navbar__link navbar__link_login'
-          >Войти</Link>
+          >Войти</NavLink>
         </nav>
       }
 

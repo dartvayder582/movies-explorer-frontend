@@ -41,7 +41,7 @@ const Header = React.memo(({
     //   }
     // </header>
     <header className={`header ${isLoggedIn ? 'header_logged-in' : ''} ${location.pathname === '/' ? 'header_theme_blue' : ''}`}>
-      <div className="header__main-el">
+      <div className="header__main-el content">
         {/* <img className="header__logo" src={headerLogo} alt="Место. Россия" /> */}
         {/* {isLoggedIn ? <Hamburger color='white' size={28} rounded onToggle={setIsShowMobileNavbar} /> : ''} */}
         <Logo />

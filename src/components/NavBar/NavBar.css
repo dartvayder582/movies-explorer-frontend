@@ -5,6 +5,7 @@
 
 .navbar_logged-in {
   flex-basis: 675px;
+  flex-shrink: 0.68;
 }
 
 .navbar__link {
