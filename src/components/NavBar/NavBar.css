@@ -28,7 +28,7 @@
   line-height: 18px;
 }
 
-.navbar__link_login {
+.navbar__link-login {
   min-width: 76px;
   min-height: 32px;
   border-radius: 3px;
@@ -36,7 +36,7 @@
   color: #000;
 }
 
-.navbar__link_account {
+.navbar__link-account {
   margin-left: auto;
   min-width: 100px;
   min-height: 32px;
@@ -44,6 +44,11 @@
   font-size: 14px;
   border-radius: 20px;
   color: #000;
+  transition: all 0.3s ease;
+}
+
+.navbar__link-account_active {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .navbar__link_active {

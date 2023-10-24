@@ -1,0 +1,36 @@
+.cards {
+  margin-top: 70px;
+  /* margin-bottom: 80px; */
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  row-gap: 32px;
+  column-gap: 20px;
+}
+
+/* @media screen and (max-width: 424px) {
+  .cards {
+    gap: 20px;
+  }
+} */
+
+.cards__show-more {
+  margin: 80px 0 80px;
+  width: 100%;
+  min-height: 36px;
+  border: 0;
+  background-color: rgba(249, 249, 249, 1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.cards__show-more:hover {
+  opacity: .8;
+}

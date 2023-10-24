@@ -1,0 +1,132 @@
+.card {
+  position: relative;
+  background-color: #FDFDFD;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.05);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1.8;
+  object-fit: cover;
+}
+
+/* .card__image:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(173, 170, 170);
+  background-image: url('../../../images/imageNotFound.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+} */
+
+/* .card__image:after {
+  content: "Не удалось загрузить изображение: " attr(aria-label);
+  color: rgb(100, 100, 100);
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  position: absolute;
+  bottom: 30%;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  background-color: rgb(230, 230, 230);
+  border: 2px dotted rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+.card__image:hover {
+  cursor: pointer;
+} */
+
+.card__info {
+  padding: 14px 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.card__like {
+  margin-left: auto;
+  width: 22px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__button {
+  border: 0;
+
+  outline: none;
+  background-color: transparent;
+  /* background-color: rgba(249, 249, 249, 1); */
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card__button:hover {
+  /* opacity: .5; */
+  transform: scale(1.2);
+}
+
+.card__button_add {
+  border-radius: 50%;
+  background-image: url('../../../images/card-addIcon.svg');
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.09);
+}
+
+.card__button_add-active {
+  /* background-color: rgba(43, 224, 128, 1); */
+  background-image: url('../../../images/card-addIcon_active.svg');
+}
+
+.card__button_add-active:hover {
+  /* opacity: 1; */
+}
+
+.card__button_delete {
+  background-image: url('../../../images/card-removeIcon.svg');
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__name {
+  margin: 0;
+  padding: 0;
+  max-width: 206px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card__duration {
+  padding: 0;
+  margin: 0;
+  color: #A0A0A0;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+}

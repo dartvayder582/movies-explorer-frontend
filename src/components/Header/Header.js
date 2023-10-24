@@ -44,7 +44,10 @@ const Header = React.memo(({
       <div className="header__main-el content">
         {/* <img className="header__logo" src={headerLogo} alt="Место. Россия" /> */}
         {/* {isLoggedIn ? <Hamburger color='white' size={28} rounded onToggle={setIsShowMobileNavbar} /> : ''} */}
-        <Logo />
+        <div className='header__logo-block'>
+          <Logo />
+        </div>
+
         {/* {isLoadCheckToken ? '' : */}
         <NavBar
           isLoggedIn={isLoggedIn}

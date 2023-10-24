@@ -4,10 +4,7 @@ import './Logo.css';
 
 const Logo = React.memo(() => {
   return (
-    <div className='logo'>
-      <Link className='logo__item' to='/' type='button' />
-    </div>
-
+    <Link className='logo' to='/' type='button' />
   )
 })
 

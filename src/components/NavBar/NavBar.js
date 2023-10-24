@@ -124,7 +124,12 @@ const NavBar = React.memo(({
           <NavLink
             to='/profile'
             type="button"
-            className={`link-style navbar__link navbar__link_account`}
+            className={
+              ({ isActive }) =>
+              `link-style
+              navbar__link
+              navbar__link-account
+              ${isActive ? 'navbar__link-account_active' : ''}`}
           >Аккаунт</NavLink>
         </nav>
         :
@@ -137,7 +142,7 @@ const NavBar = React.memo(({
           <NavLink
             to='/signin'
             type="button"
-            className='link-style navbar__link navbar__link_login'
+            className='link-style navbar__link navbar__link-login'
           >Войти</NavLink>
         </nav>
       }

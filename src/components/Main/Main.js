@@ -5,7 +5,7 @@ import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 
-const Main = () => {
+const Main = React.memo(({ }) => {
   return (
     <main>
       <Promo />
@@ -15,6 +15,7 @@ const Main = () => {
       <AboutMe />
     </main>
   )
-}
+})
+
 
 export default Main;

@@ -4,9 +4,9 @@
 /*font*/
 @import url(./vendor/font/inter.css);
 
-* {
+/* * {
   outline: 2px solid red;
-}
+} */
 
 .page {
   /* background-color: black; */

@@ -2,13 +2,13 @@ import React from "react";
 import SearchForm from "../../forms/SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-const SavedMovies = React.memo(({
+const AllMovies = React.memo(({
   cards,
   //  onCardClick,
   onCardLike,
   onCardDelete,
   location
-}) => {
+ }) => {
   return (
     <main>
       <SearchForm />
@@ -23,4 +23,4 @@ const SavedMovies = React.memo(({
 })
 
 
-export default SavedMovies;
+export default AllMovies;

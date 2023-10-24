@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../Logo/Logo';
-import ApiErrorMessage from '../ApiErrorMessage/ApiErrorMessage';
+import Logo from '../../Logo/Logo';
+import ErrorMessageApi from '../../ErrorMessageApi/ErrorMessageApi';
 import './auth.css';
+import '../forms.css';
 
-const Register = ({ isLoad, onRegister }) => {
+const Login = ({ isLoad, onLogin }) => {
   const [formValue, setFormValue] = useState({
-    name: '',
     email: '',
-    password: '',
+    password: ''
   })
 
   const handleChange = (e) => {
@@ -22,27 +22,21 @@ const Register = ({ isLoad, onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister(formValue.name, formValue.email, formValue.password);
+    if (!formValue.email || !formValue.password) {
+      return;
+    }
+    onLogin(formValue.email, formValue.password)
   }
 
   return (
     <div className="authentication content content_centered_vertically">
       <Logo />
       <form className="form" onSubmit={handleSubmit}>
-        <h2 className="form__heading">Добро пожаловать!</h2>
-        <fieldset className="form__fieldset">
-          <label htmlFor="name" className="form__label">Имя</label>
-          <input
-            className="form__input"
-            required
-            id="name" name="name"
-            type="text"
-            value={formValue.name}
-            onChange={handleChange} />
-          <span className="form__error"></span>
+        <h2 className="form__heading">Рады видеть!</h2>
+        <fieldset className="form__fieldset form__fieldset_auth">
           <label htmlFor="email" className="form__label">E-mail</label>
           <input
-            className="form__input"
+            className="form__input form__input_auth"
             required
             id="email"
             name="email"
@@ -52,7 +46,7 @@ const Register = ({ isLoad, onRegister }) => {
           <span className="form__error"></span>
           <label htmlFor="password" className="form__label">Пароль</label>
           <input
-            className="form__input"
+            className="form__input form__input_auth"
             required
             id="password"
             name="password"
@@ -61,19 +55,19 @@ const Register = ({ isLoad, onRegister }) => {
             onChange={handleChange} />
           <span className="form__error"></span>
         </fieldset>
-        <ApiErrorMessage />
+        <ErrorMessageApi />
         <button
           type="submit"
-          className="form__submit-button"
-          aria-label="Зарегистрироваться"
+          className="form__submit-button form__submit-button_auth"
+          aria-label="Войти"
           disabled={isLoad} >
-          {!isLoad ? "Зарегистрироваться" : "Регистрация..."}
+          {!isLoad ? "Войти" : "Вход..."}
         </button>
       </form>
-      <p className="authentication__footer">Уже зарегистрированы? {<Link to="/signin" className="link-style">Войти</Link>}</p>
+      <p className="authentication__footer">Ещё не зарегистрированы? {<Link to="/signup" className="link-style">Регистрация</Link>}</p>
 
     </div>
   )
 }
 
-export default Register;
+export default Login;
