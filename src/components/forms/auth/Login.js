@@ -29,12 +29,12 @@ const Login = ({ isLoad, onLogin }) => {
   }
 
   return (
-    <div className="authentication content content_centered_vertically">
-      <Logo />
-      <form className="form" onSubmit={handleSubmit}>
-        <h2 className="form__heading">Рады видеть!</h2>
+    <div className="content content_full-vh authentication">
+      <form className="form form_auth" onSubmit={handleSubmit}>
+        <Logo />
+        <h2 className="form__heading form__heading_auth">Рады видеть!</h2>
         <fieldset className="form__fieldset form__fieldset_auth">
-          <label htmlFor="email" className="form__label">E-mail</label>
+          <label htmlFor="email" className="form__label form__label_auth">E-mail</label>
           <input
             className="form__input form__input_auth"
             required
@@ -44,7 +44,7 @@ const Login = ({ isLoad, onLogin }) => {
             value={formValue.email}
             onChange={handleChange} />
           <span className="form__error"></span>
-          <label htmlFor="password" className="form__label">Пароль</label>
+          <label htmlFor="password" className="form__label form__label_auth">Пароль</label>
           <input
             className="form__input form__input_auth"
             required
@@ -58,13 +58,13 @@ const Login = ({ isLoad, onLogin }) => {
         <ErrorMessageApi />
         <button
           type="submit"
-          className="form__submit-button form__submit-button_auth"
+          className="button-style form__submit-button form__submit-button_auth"
           aria-label="Войти"
           disabled={isLoad} >
           {!isLoad ? "Войти" : "Вход..."}
         </button>
       </form>
-      <p className="authentication__footer">Ещё не зарегистрированы? {<Link to="/signup" className="link-style">Регистрация</Link>}</p>
+      <p className="authentication__footer">Ещё не зарегистрированы? {<Link to="/signup" className="link-style link-style_orange">Регистрация</Link>}</p>
 
     </div>
   )

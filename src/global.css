@@ -4,28 +4,20 @@
 /*font*/
 @import url(./vendor/font/inter.css);
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* * {
   outline: 2px solid red;
 } */
 
 .page {
-  /* background-color: black; */
   margin: 0;
   padding: 0;
-  /* height: 100vh; */
   font-family: 'Inter', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.content {
-  max-width: 1140px;
-  padding: 0 70px;
-  margin: 0 auto;
-}
-
-.content_centered_vertically {
-  height: 100vh;
 }
 
 .link-style {
@@ -38,17 +30,43 @@
   opacity: .7;
 }
 
+.link-style_orange {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FF6838;
+}
+
 .list-style {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+.button-style {
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button-style:hover {
+  opacity: .8;
+}
+
+
+
+
+
+
+
+
+
 .section {}
 
 .section__title {
   margin: 0;
-  padding: 0;
+  padding: 0 0 23px;
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
@@ -148,6 +166,8 @@
   /* max-width: 912px */
 }
 
+
+
 /*общие*/
 /* @import url(./blocks/page/page.css); */
 /* @import url(./blocks/list-style/list-style.css); */
@@ -155,8 +175,3 @@
 /* @import url(./blocks/logo/logo.css); */
 
 /*страница не найдена*/
-@import url(./blocks/not-found/not-found.css);
-@import url(./blocks/not-found/__title/not-found__title.css);
-@import url(./blocks/not-found/__text/not-found__text.css);
-@import url(./blocks/not-found/__link/not-found__link.css);
-;

@@ -1,0 +1,51 @@
+.profile {
+  min-height: calc(100vh - 74px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* profile inputs */
+.profile__input-area {
+  min-height: 48px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-top: 1px solid #E8E8E8;
+}
+
+.profile__input-area:first-of-type {
+  border-top: 0;
+}
+
+/* profile buttons */
+.profile__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 45px;
+}
+
+.profile__logout,
+.profile__edit {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  background: none;
+}
+
+.profile__edit {
+  font-weight: 400;
+  color: #000;
+}
+
+.profile__logout {
+  font-weight: 500;
+  color: #FF004D;
+}

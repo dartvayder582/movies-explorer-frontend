@@ -27,12 +27,12 @@ const Register = ({ isLoad, onRegister }) => {
   }
 
   return (
-    <div className="authentication content content_centered_vertically">
-      <Logo />
-      <form className="form" onSubmit={handleSubmit}>
-        <h2 className="form__heading">Добро пожаловать!</h2>
+    <div className="content content_full-vh authentication">
+      <form className="form form_auth" onSubmit={handleSubmit}>
+        <Logo />
+        <h2 className="form__heading form__heading_auth">Добро пожаловать!</h2>
         <fieldset className="form__fieldset form__fieldset_auth">
-          <label htmlFor="name" className="form__label">Имя</label>
+          <label htmlFor="name" className="form__label form__label_auth">Имя</label>
           <input
             className="form__input form__input_auth"
             required
@@ -41,7 +41,7 @@ const Register = ({ isLoad, onRegister }) => {
             value={formValue.name}
             onChange={handleChange} />
           <span className="form__error"></span>
-          <label htmlFor="email" className="form__label">E-mail</label>
+          <label htmlFor="email" className="form__label form__label_auth">E-mail</label>
           <input
             className="form__input form__input_auth"
             required
@@ -51,7 +51,7 @@ const Register = ({ isLoad, onRegister }) => {
             value={formValue.email}
             onChange={handleChange} />
           <span className="form__error"></span>
-          <label htmlFor="password" className="form__label">Пароль</label>
+          <label htmlFor="password" className="form__label form__label_auth">Пароль</label>
           <input
             className="form__input form__input_auth"
             required
@@ -65,13 +65,13 @@ const Register = ({ isLoad, onRegister }) => {
         <ErrorMessageApi />
         <button
           type="submit"
-          className="form__submit-button form__submit-button_auth"
+          className="button-style form__submit-button form__submit-button_auth"
           aria-label="Зарегистрироваться"
           disabled={isLoad} >
           {!isLoad ? "Зарегистрироваться" : "Регистрация..."}
         </button>
       </form>
-      <p className="authentication__footer">Уже зарегистрированы? {<Link to="/signin" className="link-style">Войти</Link>}</p>
+      <p className="authentication__footer">Уже зарегистрированы? {<Link to="/signin" className="link-style link-style_orange">Войти</Link>}</p>
 
     </div>
   )

@@ -8,7 +8,6 @@
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  /* min-height: 172px; */
 }
 
 .footer__font {
@@ -17,6 +16,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
+  color: #000;
 }
 
 .footer__heading {

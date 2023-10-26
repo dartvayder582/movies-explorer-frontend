@@ -21,7 +21,7 @@ const SearchForm = () => {
             placeholder="Фильм" />
           <button
             type="submit"
-            className="form__submit-button form__submit-button_search"
+            className="button-style form__submit-button form__submit-button_search"
             aria-label="Найти" />
         </fieldset>
         <fieldset className='form__fieldset form__fieldset_checkbox'>
