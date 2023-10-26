@@ -10,15 +10,11 @@
 .header__logo-block {
   flex-basis: 465px;
   flex-shrink: 1;
-  /* display: flex;
-  align-items: flex-end; */
 }
-
 
 .header__main-el {
   min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* position: relative; */
 }

@@ -7,11 +7,8 @@ import Logo from '../Logo/Logo';
 import './Header.css';
 
 const Header = React.memo(({
-  // email,
-  // onSignOut,
   isLoggedIn,
   location,
-  // isLoadCheckToken
 }) => {
 
   // const [isShowMobileNavbar, setIsShowMobileNavbar] = React.useState(false);
@@ -26,20 +23,7 @@ const Header = React.memo(({
   // }
 
   return (
-    // <header className={`header ${isLoggedIn ? 'header_auth' : ''}`}>
-    //   <div className="header__main-el">
-    //     <img className="header__logo" src={headerLogo} alt="Место. Россия" />
-    //     {isLoggedIn ? <Hamburger color='white' size={28} rounded onToggle={setIsShowMobileNavbar} /> : ''}
-    //   </div>
-    //   {isLoadCheckToken ? '' :
-    //     <Navbar
-    //       isLoggedIn={isLoggedIn}
-    //       email={email}
-    //       onSignOut={isShowMobileNavbar ? handleMobileSignOut : onSignOut}
-    //     isShowMobileNavbar={isShowMobileNavbar}
-    //     />
-    //   }
-    // </header>
+
     <header className={`header ${isLoggedIn ? 'header_logged-in' : ''} ${location.pathname === '/' ? 'header_theme_blue' : ''}`}>
       <div className="header__main-el content">
         {/* <img className="header__logo" src={headerLogo} alt="Место. Россия" /> */}

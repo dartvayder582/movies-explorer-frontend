@@ -1,7 +1,7 @@
-import React from "react";
+import { useState, memo } from "react";
 import './MoviesCard.css';
 
-const MoviesCard = React.memo(({
+const MoviesCard = memo(({
   card,
   // onCardClick,
   onCardLike,
@@ -14,8 +14,8 @@ const MoviesCard = React.memo(({
   // const isLiked = card.likes.some(id => id === currentUser._id);
 
 
-  const [isImgError, setIsImgError] = React.useState(false);
-  const [isAdded, setIsAdded] = React.useState(false);
+  const [isImgError, setIsImgError] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
   // console.log(card);
 
   // function handleClick() {
@@ -41,11 +41,10 @@ const MoviesCard = React.memo(({
 
   return (
     <div className="card">
-      {/* {isOwn && <button type="button" className="place__delete-button" aria-label="Удалить" onClick={handleDeleteClick} />} */}
       <img className={`card__image ${isImgError ? 'card__image_error' : ''}`}
         aria-label={card.nameRU}
         src={card.thumbnail}
-        alt={' '}
+        alt={card.nameRU}
         // onClick={handleClick}
         onError={() => setIsImgError(true)} />
       <div className="card__info">
@@ -58,11 +57,6 @@ const MoviesCard = React.memo(({
           :
           <button type="button" className={`card__button card__button_add ${isAdded ? 'card__button_add-active' : ''}`} aria-label="Добавить" onClick={handleAddClick} />
         }
-
-        {/* <div className="card__like"> */}
-        {/*  */}
-        {/* <span className="place__like-count">{card.likes.length}</span> */}
-        {/* </div> */}
       </div>
     </div>
   )

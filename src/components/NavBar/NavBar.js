@@ -11,90 +11,7 @@ const NavBar = React.memo(({
   // onSignOut
 }) => {
 
-  // const location = useLocation()
   return (
-    // <Routes>
-    //   <Route
-    //     path='/'
-    //     element={
-    //       <>
-    //         {isLoggedIn ?
-    //           <nav className='navbar navbar_logged-in'>
-    //             <Link
-    //               to='/movies'
-    //               type="button"
-    //               className={
-    //                 `link-style
-    //                 navbar__link
-    //                 navbar__link_theme_blue
-    //                 navbar__link_logged-in
-    //           ${location.pathname === '/movies' ? 'navbar__link_active' : ''}`}
-    //             >Фильмы</Link>
-    //             <Link
-    //               to='/saved-movies'
-    //               type="button"
-    //               className={
-    //                 `link-style
-    //                 navbar__link
-    //                 navbar__link_theme_blue
-    //                 navbar__link_logged-in
-    //           ${location.pathname === '/saved-movies' ? 'navbar__link_active' : ''}`}
-    //             >Сохранённые фильмы</Link>
-    //             <Link
-    //               to='/profile'
-    //               type="button"
-    //               className={`link-style navbar__link navbar__link_account`}
-    //             >Аккаунт</Link>
-    //           </nav>
-    //           :
-    //           <nav className='navbar'>
-    //             <Link
-    //               to='/signup'
-    //               type="button"
-    //               className={`link-style navbar__link navbar__link_theme_blue`}
-    //             >Регистрация</Link>
-    //             <Link
-    //               to='/signin'
-    //               type="button"
-    //               className={`link-style navbar__link navbar__link_login`}
-    //             >Войти</Link>
-    //           </nav>}
-
-    //       </>
-
-    //     } />
-    //   <Route
-    //     path='/movies'
-    //     element={
-    //       <nav className='navbar navbar_logged-in'>
-    //         <Link
-    //           to='/movies'
-    //           type="button"
-    //           className={
-    //             `link-style
-    //             navbar__link
-    //             navbar__link_theme_white
-    //             navbar__link_logged-in
-    //           ${location.pathname === '/movies' ? 'navbar__link_active' : ''}`}
-    //         >Фильмы</Link>
-    //         <Link
-    //           to='/saved-movies'
-    //           type="button"
-    //           className={
-    //             `link-style
-    //             navbar__link
-    //             navbar__link_theme_white
-    //             navbar__link_logged-in
-    //           ${location.pathname === '/saved-movies' ? 'navbar__link_active' : ''}`}
-    //         >Сохранённые фильмы</Link>
-    //         <Link
-    //           to='/profile'
-    //           type="button"
-    //           className={`link-style navbar__link navbar__link_account`}
-    //         >Аккаунт</Link>
-    //       </nav>
-    //     } />
-    // </Routes>
 
     <>
       {isLoggedIn ?
@@ -103,10 +20,7 @@ const NavBar = React.memo(({
             to='/movies'
             type="button"
             className={
-              ({ isActive }) =>
-                `link-style
-              navbar__link
-              navbar__link_logged-in
+              ({ isActive }) => `link-style navbar__link navbar__link_logged-in
               ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
               ${isActive ? 'navbar__link_active' : ''}`}
           >Фильмы</NavLink>
@@ -114,10 +28,7 @@ const NavBar = React.memo(({
             to='/saved-movies'
             type="button"
             className={
-              ({ isActive }) =>
-                `link-style
-              navbar__link
-              navbar__link_logged-in
+              ({ isActive }) => `link-style navbar__link navbar__link_logged-in
               ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
               ${isActive ? 'navbar__link_active' : ''}`}
           >Сохранённые фильмы</NavLink>
@@ -125,10 +36,7 @@ const NavBar = React.memo(({
             to='/profile'
             type="button"
             className={
-              ({ isActive }) =>
-              `link-style
-              navbar__link
-              navbar__link-account
+              ({ isActive }) => `link-style navbar__link navbar__link-account
               ${isActive ? 'navbar__link-account_active' : ''}`}
           >Аккаунт</NavLink>
         </nav>

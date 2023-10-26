@@ -28,7 +28,7 @@ const MoviesCardList = React.memo(({
 
         ))}
       </ul>
-      <button className='cards__show-more'>Ещё</button>
+      <button className='button-style cards__show-more'>Ещё</button>
     </section>
 
 

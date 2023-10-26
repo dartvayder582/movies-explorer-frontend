@@ -1,5 +1,7 @@
 .navbar {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 30px;
 }
 
@@ -44,7 +46,6 @@
   font-size: 14px;
   border-radius: 20px;
   color: #000;
-  transition: all 0.3s ease;
 }
 
 .navbar__link-account_active {

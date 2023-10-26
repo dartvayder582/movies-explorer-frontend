@@ -24,7 +24,7 @@ export const cardData = [
     trailerLink: "https://www.youtube.com/watch?v=HZ3WvUfPDto",
     nameRU: "Очень хороший фильм 1",
     nameEN: "So good film",
-    thumbnail: "https://www.kino-teatr.ru/movie/poster/159821/139936.jpg",
+    thumbnail: "https://www.kino-teatr.ru/movie/pos",
     movieId: "24"
   },
   {

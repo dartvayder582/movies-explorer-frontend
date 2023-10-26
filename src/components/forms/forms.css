@@ -140,6 +140,10 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.form__input_type_error {
+  color: #EE3465;
+}
+
 /* form submit buttons */
 .form__submit-button {
   padding: 0;

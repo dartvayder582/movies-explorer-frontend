@@ -8,15 +8,15 @@ const Portfolio = () => {
       <div className='portfolio__links'>
         <p className='portfolio__link-text'>
           Статичный сайт
-          <a className='portfolio__link link-style' target="_blank"></a>
+          <a href='#' className='portfolio__link link-style' target="_blank" rel="noreferrer"></a>
         </p>
         <p className='portfolio__link-text'>
           Адаптивный сайт
-          <a className='portfolio__link link-style' target="_blank"></a>
+          <a href='#' className='portfolio__link link-style' target="_blank" rel="noreferrer"></a>
         </p>
         <p className='portfolio__link-text'>
           Одностраничное приложение
-          <a href='#' className='portfolio__link link-style' target="_blank"></a>
+          <a href='#' className='portfolio__link link-style' target="_blank" rel="noreferrer"></a>
         </p>
 
       </div>

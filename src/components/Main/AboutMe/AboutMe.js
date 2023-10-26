@@ -18,7 +18,7 @@ const AboutMe = () => {
               С 2015 года работал в компании «СКБ Контур».
               После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
             </p>
-            <a className='student__link link-style'>Github</a>
+            <a href='https://github.com/dartvayder582' target='_blank' className='student__link link-style' rel="noreferrer">Github</a>
           </div>
           <img className='student__avatar' src={studentAvatar} alt='Фото студента'></img>
         </article>

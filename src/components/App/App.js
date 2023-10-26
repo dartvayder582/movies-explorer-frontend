@@ -13,8 +13,9 @@ import Profile from '../forms/Profile/Profile';
 import './App.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate();
   // console.log(cardData);
   // const navigate = useNavigate();
 
@@ -106,7 +107,8 @@ function App() {
         <Route
           path='*'
           element={
-            <PageNotFound />
+            <PageNotFound
+              navigate={navigate} />
           } />
       </Routes>
 

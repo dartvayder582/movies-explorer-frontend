@@ -53,14 +53,14 @@ const Register = ({ isLoad, onRegister }) => {
           <span className="form__error"></span>
           <label htmlFor="password" className="form__label form__label_auth">Пароль</label>
           <input
-            className="form__input form__input_auth"
+            className="form__input form__input_auth form__input_type_error"
             required
             id="password"
             name="password"
             type="password"
             value={formValue.password}
             onChange={handleChange} />
-          <span className="form__error"></span>
+          <span className="form__error form__error_visible">Что-то пошло не так...</span>
         </fieldset>
         <ErrorMessageApi />
         <button
