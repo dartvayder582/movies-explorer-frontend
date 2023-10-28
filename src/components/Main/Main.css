@@ -2,6 +2,13 @@
   width: 100%;
 }
 
+.section {
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
 .section__title {
   margin: 0;
   padding: 0 0 23px;
@@ -12,15 +19,6 @@
   border-bottom: 1px solid #000;
   align-self: baseline;
   width: 100%;
-}
-
-.section__subtitle {
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 58px;
-  letter-spacing: -.04em;
 }
 
 .two-columns {
@@ -65,32 +63,35 @@
 
 .schedule__title {
   margin: 14px 0 0;
-  padding: 0;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
   color: #A0A0A0;
   text-align: center;
 }
 
 .schedule__text {
   margin: 0;
-  padding: 0;
   min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 400;
+}
+
+.schedule__title,
+.schedule__text {
+  padding: 0;
   font-size: 14px;
   line-height: 17px;
 }
 
 .schedule__item:nth-of-type(1) {
   flex-basis: 228px;
+  flex-shrink: 0.8;
 }
 
 .schedule__item:nth-of-type(2) {
   flex-basis: 912px;
+  flex-shrink: 1;
 }
 
 .schedule__item:nth-of-type(1) .schedule__text {
@@ -99,4 +100,77 @@
 
 .schedule__item:nth-of-type(2) .schedule__text {
   background-color: #F2F2F2;
+}
+
+@media screen and (max-width: 1023px) {
+  .section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .two-columns {
+    gap: 30px;
+    margin-bottom: 90px;
+  }
+
+  .two-columns__main-text {
+    gap: 22px;
+  }
+
+  .two-columns__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .schedule__title {
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section__title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 28px;
+  }
+
+  .two-columns {
+    flex-wrap: wrap;
+    gap: 55px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+
+  .two-columns__main-text {
+    gap: 16px;
+  }
+
+  .two-columns__heading {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .two-columns__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .schedule__title {
+    margin-top: 10px;
+  }
+
+  .schedule__title,
+  .schedule__text {
+    font-size: 11px;
+    line-height: 13.31px;
+  }
 }

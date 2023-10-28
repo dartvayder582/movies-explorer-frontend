@@ -1,12 +1,12 @@
-import React from "react";
+import { memo } from "react";
 import SearchForm from "../../forms/SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-const SavedMovies = React.memo(({
+const SavedMovies = memo(({
   cards,
   //  onCardClick,
-  onCardLike,
-  onCardDelete,
+  // onCardLike,
+  // onCardDelete,
   location
 }) => {
   return (
@@ -15,8 +15,8 @@ const SavedMovies = React.memo(({
       <MoviesCardList
         cards={cards}
         //  onCardClick
-        onCardLike={onCardLike}
-        onCardDelete={onCardDelete}
+        // onCardLike={onCardLike}
+        // onCardDelete={onCardDelete}
         location={location} />
     </main>
   )

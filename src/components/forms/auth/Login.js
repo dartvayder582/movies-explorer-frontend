@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../Logo/Logo';
 import ErrorMessageApi from '../../ErrorMessageApi/ErrorMessageApi';
 import './auth.css';
 import '../forms.css';
 
-const Login = ({ isLoad, onLogin }) => {
+const Login = ({
+  isLoad,
+  onLogin,
+  isShowApiError,
+}) => {
   const [formValue, setFormValue] = useState({
     email: '',
     password: ''
@@ -29,7 +33,7 @@ const Login = ({ isLoad, onLogin }) => {
   }
 
   return (
-    <div className="content content_full-vh authentication">
+    <div className="content content_full-vh auth">
       <form className="form form_auth" onSubmit={handleSubmit}>
         <Logo />
         <h2 className="form__heading form__heading_auth">Рады видеть!</h2>
@@ -55,7 +59,8 @@ const Login = ({ isLoad, onLogin }) => {
             onChange={handleChange} />
           <span className="form__error"></span>
         </fieldset>
-        <ErrorMessageApi />
+        <ErrorMessageApi
+          isShowApiError={isShowApiError} />
         <button
           type="submit"
           className="button-style form__submit-button form__submit-button_auth"
@@ -64,7 +69,7 @@ const Login = ({ isLoad, onLogin }) => {
           {!isLoad ? "Войти" : "Вход..."}
         </button>
       </form>
-      <p className="authentication__footer">Ещё не зарегистрированы? {<Link to="/signup" className="link-style link-style_orange">Регистрация</Link>}</p>
+      <p className="auth__footer">Ещё не зарегистрированы? {<Link to="/signup" className="link-style link-style_orange auth__link">Регистрация</Link>}</p>
 
     </div>
   )

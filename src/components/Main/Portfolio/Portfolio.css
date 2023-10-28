@@ -24,8 +24,9 @@
   line-height: 50px;
   letter-spacing: -.04em;
 }
-.portfolio__text:last-of-type {
+.portfolio__link-text:last-of-type {
   border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .portfolio__link {
@@ -33,4 +34,31 @@
   background-image: url('../../../images/portfolio-link.svg');
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .portfolio__link-text {
+    font-size: 28px;
+  }
+
+  .portfolio__link {
+    display: block;
+    width: 27px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio__title {
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+
+  .portfolio__link-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .portfolio__link {
+    width: 18px;
+  }
 }

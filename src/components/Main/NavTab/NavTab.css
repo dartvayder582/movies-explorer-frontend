@@ -13,9 +13,20 @@
 }
 
 .navtab__link {
+  display: block;
   color: #000;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 479px) {
+  .navtab__list {
+    gap: 24px;
+  }
+
+  .navtab__link {
+    font-size: 11px;
+  }
 }

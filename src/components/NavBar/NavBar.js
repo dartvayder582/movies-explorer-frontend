@@ -1,146 +1,70 @@
-import React from 'react';
-import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { useState, useEffect, memo } from 'react';
+import { NavLink } from 'react-router-dom';
 // import AnimatedNavbar from './animation/AnimatedNavbar';
 // import { AnimatePresence } from 'framer-motion';
 import './NavBar.css'
 
-const NavBar = React.memo(({
+const NavBar = memo(({
+  items,
   isLoggedIn,
   location,
-  // isShowMobileNavbar,
   // onSignOut
 }) => {
+  const [isShowMobileNavbar, setIsShowMobileNavbar] = useState(false);
+
+  useEffect(() => {
+    setIsShowMobileNavbar(false);
+  }, [location]);
+
+  const showMobileNav = () => {
+    setIsShowMobileNavbar(true);
+  }
+
+  const hideMobileNav = () => {
+    setIsShowMobileNavbar(false);
+  }
 
   return (
-
     <>
+      <nav className={
+        `navbar
+        ${isLoggedIn ? 'navbar_logged-in' : ''}
+        ${isShowMobileNavbar ? 'navbar_active' : ''}`}>
+        {isLoggedIn ? <button type='button' className='button-style navbar__close-button' onClick={hideMobileNav} /> : ''}
+        <ul className={
+          `list-style navbar__links
+          ${isLoggedIn ? 'navbar__links_logged-in' : ''}`}>
+          {items.map((item, i) =>
+            <li key={item.id} className={`navbar__list-item_${item.id}`}>
+              <NavLink
+                to={item.href}
+                id={item.id}
+                type='button'
+                className={
+                  ({ isActive }) =>
+                    `link-style navbar__link navbar__link-${item.id}
+                  ${isLoggedIn ? 'navbar__link_logged-in' : ''}
+                  ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
+                  ${isActive ? `navbar__link-${item.id}_active` : ''}`
+                }
+              >{item.text}</NavLink>
+            </li>
+          )}
+        </ul>
+
+      </nav>
       {isLoggedIn ?
-        <nav className='navbar navbar_logged-in'>
-          <NavLink
-            to='/movies'
-            type="button"
-            className={
-              ({ isActive }) => `link-style navbar__link navbar__link_logged-in
-              ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
-              ${isActive ? 'navbar__link_active' : ''}`}
-          >Фильмы</NavLink>
-          <NavLink
-            to='/saved-movies'
-            type="button"
-            className={
-              ({ isActive }) => `link-style navbar__link navbar__link_logged-in
-              ${location.pathname === '/' ? 'navbar__link_theme_blue' : ''}
-              ${isActive ? 'navbar__link_active' : ''}`}
-          >Сохранённые фильмы</NavLink>
-          <NavLink
-            to='/profile'
-            type="button"
-            className={
-              ({ isActive }) => `link-style navbar__link navbar__link-account
-              ${isActive ? 'navbar__link-account_active' : ''}`}
-          >Аккаунт</NavLink>
-        </nav>
-        :
-        <nav className='navbar'>
-          <NavLink
-            to='/signup'
-            type="button"
-            className='link-style navbar__link navbar__link_theme_blue'
-          >Регистрация</NavLink>
-          <NavLink
-            to='/signin'
-            type="button"
-            className='link-style navbar__link navbar__link-login'
-          >Войти</NavLink>
-        </nav>
-      }
-
-
+        <>
+          <div className={`shading ${isShowMobileNavbar ? 'shading_active' : ''}`} onClick={hideMobileNav} />
+          <button
+            className={`button-style navbar__open-button ${location.pathname === '/' ? 'navbar__open-button_white' : ''}`}
+            onClick={showMobileNav} />
+        </>
+        : ''}
 
     </>
 
-
-
   )
-  // return
-  // <AnimatePresence mode='wait'>
-  //   <Routes key={location.pathname} location={location}>
-  //     <Route
-  //       path="/signin"
-  //       element={
-  //         <AnimatedNavbar>
-  //           <nav className="navbar">
-  //             <Link
-  //               to='/signup'
-  //               type="button"
-  //               className="navbar__link link-style"
-  //             >Регистрация</Link>
-  //           </nav>
-  //         </AnimatedNavbar>
-  //       } />
-  //     <Route
-  //       path="/signup"
-  //       element={
-  //         <AnimatedNavbar>
-  //           <nav className="navbar">
-  //             <Link
-  //               to='/signin'
-  //               type="button"
-  //               className="navbar__link link-style"
-  //             >Войти</Link>
-  //           </nav>
-  //         </AnimatedNavbar>
-  //       } />
-  //     <Route
-  //       exact path="/"
-  //       element={
-  //         <AnimatedNavbar>
-  //           <nav className={`navbar navbar_auth ${isShowMobileNavbar ? 'navbar_active' : ''}`}>
-  //             <p className='navbar__email'>{email}</p>
-  //             <Link
-  //               to='/signin'
-  //               type="button"
-  //               onClick={onSignOut}
-  //               className="navbar__link link-style navbar__link_auth"
-  //             >Выйти</Link>
-  //           </nav>
-
-  //         </AnimatedNavbar>
-  //       } />
-  //   </Routes>
-  // </AnimatePresence>
-  // <AnimatePresence mode='wait'>
-  // <Routes key={location.pathname} location={location}>
-  //   <Route
-  //     path="/signin"
-  //     element={
-  //       // <AnimatedNavbar>
-  //         <nav className="navbar">
-  //           <Link
-  //             to='/signup'
-  //             type="button"
-  //             className="navbar__link link-style"
-  //           >Регистрация</Link>
-  //         </nav>
-  //       // </AnimatedNavbar>
-  //     } />
-  //   <Route
-  //     path="/signup"
-  //     element={
-  //       // <AnimatedNavbar>
-  //         <nav className="navbar">
-  //           <Link
-  //             to='/signin'
-  //             type="button"
-  //             className="navbar__link link-style"
-  //           >Войти</Link>
-  //         </nav>
-  //       // </AnimatedNavbar>
-  //     } />
-
-  // </Routes>
-  // </AnimatePresence>
-
 })
 
 export default NavBar;

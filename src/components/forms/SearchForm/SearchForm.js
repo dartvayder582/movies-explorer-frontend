@@ -10,8 +10,8 @@ const SearchForm = () => {
   };
 
   return (
-    <section className="content">
-      <form className="form form_search">
+    <section>
+      <form className="form form_search content">
         <fieldset className="form__fieldset form__fieldset_search">
           <input
             type="text"

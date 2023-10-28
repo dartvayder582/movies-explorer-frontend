@@ -1,8 +1,8 @@
-import React from 'react';
+import { memo } from 'react';
 import '../forms.css';
 import './FilterCheckbox.css';
 
-const FilterCheckbox = React.memo(({
+const FilterCheckbox = memo(({
   isChecked,
   handleOnChange,
   checkboxText,

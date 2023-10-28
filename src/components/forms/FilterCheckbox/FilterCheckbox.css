@@ -1,5 +1,6 @@
 .checkbox {
   display: flex;
+  align-items: center;
   gap: 12px;
 }
 
@@ -53,4 +54,10 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .checkbox__text {
+    font-size: 11px;
+  }
 }

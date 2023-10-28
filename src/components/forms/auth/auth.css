@@ -1,11 +1,11 @@
-.authentication {
+.auth {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.authentication__footer {
+.auth__footer {
   padding: 0;
   margin: 16px 0 0;
   color: #A0A0A0;
@@ -13,5 +13,15 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+}
+
+.auth__link {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .auth__footer {
+    margin-bottom: 30px;
+  }
 }
 

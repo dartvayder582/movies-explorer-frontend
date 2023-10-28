@@ -2,14 +2,7 @@ import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import './PageNotFound.css'
 
-const PageNotFound = memo(({
-  navigate,
-}) => {
-  console.log(navigate);
-  const goBack = () => {
-    console.log(navigate(-1));
-    navigate(-1);
-  }
+const PageNotFound = memo(() => {
 
   return (
     <div className="not-found content content_full-vh">

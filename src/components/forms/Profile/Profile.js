@@ -5,7 +5,9 @@ import './Profile.css';
 import '../forms.css';
 
 const Profile = memo(({
-  isLoad, onUpdateUser,
+  isLoad,
+  onUpdateUser,
+  isShowApiError,
 }) => {
   // const currentUser = React.useContext(CurrentUserContext);
   //for dev
@@ -85,7 +87,8 @@ const Profile = memo(({
               readOnly={!isEditMode} />
           </div>
         </fieldset>
-        <ErrorMessageApi />
+        <ErrorMessageApi
+          isShowApiError={isShowApiError} />
         {isEditMode ?
           <button
             type="submit"

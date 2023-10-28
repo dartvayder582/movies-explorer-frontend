@@ -8,7 +8,7 @@ export const cardData = [
     description: "Страдающий ожирением мужчина по имени Чарли когда-то бросил семью ради любовника. Оказавшись на пороге смерти, он пытается восстановить отношения с дочерью-подростком Элли, которую не видел несколько лет.",
     image: "https://www.kino-teatr.ru/movie/poster/159821/139936.jpg",
     trailerLink: "https://www.youtube.com/watch?v=HZ3WvUfPDto",
-    nameRU: "Очень хороший фильм 1",
+    nameRU: "Очень хороший фильм 1 супер большое название",
     nameEN: "So good film",
     thumbnail: "https://v1.popcornnews.ru/upload/image/1(540).jpg",
     movieId: "25"

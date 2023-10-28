@@ -14,6 +14,7 @@ import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isShowApiError, setIsShowApiError] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   // console.log(cardData);
@@ -43,20 +44,20 @@ function App() {
                 location={location} />
               <Main />
               <Footer />
-
             </>
-
           } />
         <Route
           path='/signup'
           element={
-            <Register />
+            <Register
+            isShowApiError={isShowApiError} />
 
           } />
         <Route
           path='/signin'
           element={
-            <Login />
+            <Login
+            isShowApiError={isShowApiError} />
           } />
         <Route
           path='/movies'
@@ -98,10 +99,9 @@ function App() {
               <Header
                 isLoggedIn={isLoggedIn}
                 location={location} />
-              <Profile />
+              <Profile
+              isShowApiError={isShowApiError} />
             </>
-
-
           } />
 
         <Route

@@ -13,8 +13,25 @@
 }
 
 .header__main-el {
+  padding-right: 70px;
+  padding-left: 70px;
   min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .header__main-el {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__main-el {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
 }

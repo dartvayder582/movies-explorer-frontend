@@ -3,8 +3,6 @@
 }
 
 .techs__main-content {
-  padding-top: 100px;
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +20,8 @@
 .techs__text {
   padding: 0;
   margin: 0;
+  max-width: 460px;
+  text-align: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -48,4 +48,59 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: -.04em;
+}
+
+@media screen and (max-width: 1023px) {
+  .techs__title {
+    margin-top: 80px;
+    margin-bottom: 22px;
+  }
+
+  .techs__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .techs__cards {
+    margin-top: 80px;
+  }
+
+  .techs__card {
+    min-height: 57px;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .techs {
+    background-color: #fff;
+  }
+
+  .techs__title {
+    font-size: 30px;
+    line-height: 36.31px;
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .techs__text {
+    font-size: 11px;
+    line-height: 16px;
+    max-width: 370px;
+  }
+
+  .techs__cards {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .techs__text {
+    max-width: 292px;
+  }
+
+  .techs__cards {
+    max-width: 208px;
+  }
 }

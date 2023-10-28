@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../Logo/Logo';
 import ErrorMessageApi from '../../ErrorMessageApi/ErrorMessageApi';
 import './auth.css';
 import '../forms.css';
 
-const Register = ({ isLoad, onRegister }) => {
+const Register = ({
+  isLoad,
+  onRegister,
+  isShowApiError,
+}) => {
   const [formValue, setFormValue] = useState({
     name: '',
     email: '',
@@ -27,7 +31,7 @@ const Register = ({ isLoad, onRegister }) => {
   }
 
   return (
-    <div className="content content_full-vh authentication">
+    <div className="content content_full-vh auth">
       <form className="form form_auth" onSubmit={handleSubmit}>
         <Logo />
         <h2 className="form__heading form__heading_auth">Добро пожаловать!</h2>
@@ -62,7 +66,8 @@ const Register = ({ isLoad, onRegister }) => {
             onChange={handleChange} />
           <span className="form__error form__error_visible">Что-то пошло не так...</span>
         </fieldset>
-        <ErrorMessageApi />
+        <ErrorMessageApi
+          isShowApiError={isShowApiError} />
         <button
           type="submit"
           className="button-style form__submit-button form__submit-button_auth"
@@ -71,7 +76,7 @@ const Register = ({ isLoad, onRegister }) => {
           {!isLoad ? "Зарегистрироваться" : "Регистрация..."}
         </button>
       </form>
-      <p className="authentication__footer">Уже зарегистрированы? {<Link to="/signin" className="link-style link-style_orange">Войти</Link>}</p>
+      <p className="auth__footer">Уже зарегистрированы? {<Link to="/signin" className="link-style link-style_orange auth__link">Войти</Link>}</p>
 
     </div>
   )
