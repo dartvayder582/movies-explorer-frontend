@@ -61,7 +61,7 @@ const Profile = memo(({
       <form className="form form_profile" onSubmit={handleSubmit}>
         <h2 className="form__heading form__heading_profile">Привет, {currentUser.name}!</h2>
         <fieldset className="form__fieldset form__fieldset_profile">
-          <div className="profile__input-area">
+          <div className={`profile__input-area ${isEditMode ? 'profile__input-area_edit-mode' : ''}`}>
             <label htmlFor="name" className="form__label form__label_profile">Имя</label>
             <input
               className="form__input form__input_profile"
@@ -74,7 +74,7 @@ const Profile = memo(({
               ref={nameRef}
               readOnly={!isEditMode} />
           </div>
-          <div className="profile__input-area">
+          <div className={`profile__input-area ${isEditMode ? 'profile__input-area_edit-mode' : ''}`}>
             <label htmlFor="email" className="form__label form__label_profile">E-mail</label>
             <input
               className="form__input form__input_profile"
