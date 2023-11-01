@@ -33,15 +33,16 @@ const Login = ({
   }
 
   return (
-    <div className="content content_full-vh auth">
+    <main className="main content content_full-vh auth">
       <form className="form form_auth" onSubmit={handleSubmit}>
         <Logo />
-        <h2 className="form__heading form__heading_auth">Рады видеть!</h2>
+        <h1 className="form__heading form__heading_auth">Рады видеть!</h1>
         <fieldset className="form__fieldset form__fieldset_auth">
           <label htmlFor="email" className="form__label form__label_auth">E-mail</label>
           <input
             className="form__input form__input_auth"
             required
+            placeholder='Ваш E-mail'
             id="email"
             name="email"
             type="email"
@@ -52,9 +53,12 @@ const Login = ({
           <input
             className="form__input form__input_auth"
             required
+            placeholder='Ваш пароль'
             id="password"
             name="password"
             type="password"
+            minLength="5"
+            maxLength="25"
             value={formValue.password}
             onChange={handleChange} />
           <span className="form__error"></span>
@@ -63,7 +67,7 @@ const Login = ({
           isShowApiError={isShowApiError} />
         <button
           type="submit"
-          className="button-style form__submit-button form__submit-button_auth"
+          className="button-style button-style_opacity form__submit-button form__submit-button_auth"
           aria-label="Войти"
           disabled={isLoad} >
           {!isLoad ? "Войти" : "Вход..."}
@@ -71,7 +75,7 @@ const Login = ({
       </form>
       <p className="auth__footer">Ещё не зарегистрированы? {<Link to="/signup" className="link-style link-style_orange auth__link">Регистрация</Link>}</p>
 
-    </div>
+    </main>
   )
 }
 

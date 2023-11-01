@@ -21,6 +21,7 @@
 
 .navbar__links_logged-in {
   width: 100%;
+  gap: 16px;
 }
 
 .navbar__link {
@@ -84,7 +85,7 @@
   display: none;
 }
 
-.navbar__open-button {
+.navbar-button-open {
   display: none;
   margin-left: auto;
   min-height: 44px;
@@ -96,11 +97,11 @@
   background-image: url('../../images/burger_black.svg');
 }
 
-.navbar__close-button {
+.navbar-button-close {
   display: none;
   margin-left: auto;
-  min-height: 44px;
-  min-width: 44px;
+  min-height: 35px;
+  min-width: 35px;
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,7 +109,7 @@
   background-image: url('../../images/burger_close.svg');
 }
 
-.navbar__open-button_white {
+.navbar-button-open_white {
   background-image: url('../../images/burger_white.svg');
 }
 
@@ -127,13 +128,13 @@
 
 @media screen and (max-width: 1023px) {
 
-  .navbar__close-button,
-  .navbar__open-button,
+  .navbar-button-close,
+  .navbar-button-open,
   .navbar__list-item_main {
     display: block;
   }
 
-  .navbar__close-button {
+  .navbar-button-close {
     margin-top: 20px;
     margin-right: 20px;
   }
@@ -144,7 +145,7 @@
     z-index: 3;
     top: 0;
     height: 100vh;
-    width: 67vw;
+    width: 67.8vw;
     visibility: hidden;
     right: -100%;
     overflow: hidden;
@@ -159,7 +160,7 @@
     flex-direction: column;
     height: 100%;
     padding-top: 105px;
-    gap: 22px;
+    gap: 24px;
   }
 
   .shading_active,
@@ -182,7 +183,7 @@
     color: #000;
     font-weight: 500;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 21.78px;
     padding-bottom: 4px;
   }
 
@@ -204,7 +205,15 @@
   }
 
   .navbar__links {
-    gap: 14px;
+    gap: 17px;
+  }
+
+  .navbar__links_logged-in {
+    padding-top: 85px;
+  }
+
+  .navbar__list-item_profile {
+    margin-bottom: 46px;
   }
 
   .navbar__link-signin,
@@ -223,9 +232,13 @@
     padding-bottom: 7px;
   }
 
-  .navbar__open-button,
-  .navbar__close-button {
+  .navbar-button-open {
     min-height: 40px;
     min-width: 40px;
+  }
+
+  .navbar-button-close {
+    margin-top: 10px;
+    margin-right: 10px;
   }
 }

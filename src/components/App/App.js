@@ -32,6 +32,20 @@ function App() {
   const handleCardLike = ((card) => { });
   const handleCardDelete = ({ cardId }) => { };
 
+// аутентификация
+const onLogin = (email, password) => {
+  setIsLoggedIn(true);;
+  navigate('/', { replace: true });
+}
+const onRegister = (name, email, password) => {
+  navigate('/signin', { replace: true });
+}
+const onSignOut = () => {
+  setIsLoggedIn(false);
+  navigate('/', { replace: true });
+}
+
+
   return (
     <>
       <Routes>
@@ -50,14 +64,16 @@ function App() {
           path='/signup'
           element={
             <Register
-            isShowApiError={isShowApiError} />
+            isShowApiError={isShowApiError}
+            onRegister={onRegister} />
 
           } />
         <Route
           path='/signin'
           element={
             <Login
-            isShowApiError={isShowApiError} />
+            isShowApiError={isShowApiError}
+            onLogin={onLogin} />
           } />
         <Route
           path='/movies'
@@ -100,7 +116,8 @@ function App() {
                 isLoggedIn={isLoggedIn}
                 location={location} />
               <Profile
-              isShowApiError={isShowApiError} />
+              isShowApiError={isShowApiError}
+              onSignOut={onSignOut} />
             </>
           } />
 

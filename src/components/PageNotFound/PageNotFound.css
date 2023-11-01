@@ -1,33 +1,95 @@
-.not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.not-found__section {
+  height: 100dvh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: minmax(auto, 30px) 1fr minmax(auto, 208px) 1fr minmax(auto, 30px);
+  grid-template-areas:
+    "."
+    "."
+    "title"
+    "link"
+    ".";
+  row-gap: 30px;
 }
 
 .not-found__title {
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
   padding: 0;
-  margin: 0;
+  margin: 0 0 15px;
   font-weight: 400;
   font-size: 140px;
   line-height: 169px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
 }
 
 .not-found__text {
   display: block;
   width: 100%;
-  text-align: center;
   padding: 0;
-  margin: 5px 0 0;
+  margin: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 
 .not-found__link {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  grid-area: link;
+  align-self: end;
+  justify-self: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 1023px) {
+  .not-found__section {
+    grid-template-rows: minmax(auto, 55px) 1fr minmax(auto, 208px) 1fr minmax(auto, 55px);
+  }
+
+  .not-found__link {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .not-found__section {
+    grid-template-rows: minmax(auto, 10px) 1fr minmax(auto, 208px) 1fr minmax(auto, 10px);
+    row-gap: 20px;
+  }
+
+  .not-found__title {
+    font-size: 80px;
+    line-height: 97px;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .not-found__text {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .not-found__link {
+    font-size: 12px;
+    line-height: 14.52px;
+    align-self: end;
+  }
+}
+
+@media screen and (max-height: 350px) {
+  .not-found__section {
+    grid-template-rows: 1fr minmax(auto, 208px) 1fr 1fr;
+    grid-template-areas:
+      "."
+      "title"
+      "link"
+      ".";
+  }
 }

@@ -10,7 +10,7 @@ const SavedMovies = memo(({
   location
 }) => {
   return (
-    <main>
+    <main className='main'>
       <SearchForm />
       <MoviesCardList
         cards={cards}

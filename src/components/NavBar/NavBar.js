@@ -30,16 +30,15 @@ const NavBar = memo(({
         `navbar
         ${isLoggedIn ? 'navbar_logged-in' : ''}
         ${isShowMobileNavbar ? 'navbar_active' : ''}`}>
-        {isLoggedIn ? <button type='button' className='button-style navbar__close-button' onClick={hideMobileNav} /> : ''}
+        {isLoggedIn ? <button type='button' className='button-style button-style_opacity navbar-button-close' onClick={hideMobileNav} /> : ''}
         <ul className={
           `list-style navbar__links
           ${isLoggedIn ? 'navbar__links_logged-in' : ''}`}>
           {items.map((item, i) =>
-            <li key={item.id} className={`navbar__list-item_${item.id}`}>
+            <li key={item.id} className={`navbar__list-item navbar__list-item_${item.id}`}>
               <NavLink
                 to={item.href}
                 id={item.id}
-                type='button'
                 className={
                   ({ isActive }) =>
                     `link-style navbar__link navbar__link-${item.id}
@@ -57,7 +56,8 @@ const NavBar = memo(({
         <>
           <div className={`shading ${isShowMobileNavbar ? 'shading_active' : ''}`} onClick={hideMobileNav} />
           <button
-            className={`button-style navbar__open-button ${location.pathname === '/' ? 'navbar__open-button_white' : ''}`}
+            type='button'
+            className={`button-style button-style_opacity navbar-button-open ${location.pathname === '/' ? 'navbar-button-open_white' : ''}`}
             onClick={showMobileNav} />
         </>
         : ''}

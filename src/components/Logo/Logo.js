@@ -4,7 +4,7 @@ import './Logo.css';
 
 const Logo = memo(() => {
   return (
-    <Link className='logo' to='/' type='button' />
+    <Link className='logo button-style button-style_scale' to='/' />
   )
 })
 

@@ -15,13 +15,14 @@ const SearchForm = () => {
         <fieldset className="form__fieldset form__fieldset_search">
           <input
             type="text"
+            required
             className="form__input form__input_search"
             id="film"
             name="film"
             placeholder="Фильм" />
           <button
             type="submit"
-            className="button-style form__submit-button form__submit-button_search"
+            className="button-style button-style_opacity form__submit-button form__submit-button_search"
             aria-label="Найти" />
         </fieldset>
         <fieldset className='form__fieldset form__fieldset_checkbox'>

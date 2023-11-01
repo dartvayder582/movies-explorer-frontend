@@ -4,11 +4,19 @@
 /*font*/
 @import url(./vendor/font/inter.css);
 
-html {
-  scroll-behavior: smooth;
-  overflow: auto;
-  margin-left: calc(100vw - 100%);
-  margin-right: 0;
+html,
+.page,
+#root {
+  height: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+    overflow: auto;
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+  }
 }
 
 /* * {
@@ -23,6 +31,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
 .link-style {
   text-decoration: none;
   cursor: pointer;
@@ -34,9 +51,6 @@ html {
 }
 
 .link-style_orange {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
   color: #FF6838;
 }
 
@@ -51,9 +65,21 @@ html {
   outline: none;
   cursor: pointer;
   border: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.button-style:hover {
+.button-style_opacity {
+  opacity: 1;
+}
+
+.button-style_opacity:hover {
   opacity: .8;
+}
+
+.button-style_scale {
+  transform: scale(1);
+}
+
+.button-style_scale:hover {
+  transform: scale(1.1);
 }

@@ -11,7 +11,7 @@ const FilterCheckbox = memo(({
   return (
 
     <label htmlFor='shortFilm-option' className='checkbox'>
-      <div className='checkbox__switch'>
+      <span className='checkbox__switch button-style button-style_scale'>
         <input
           type="checkbox"
           className="checkbox__item"
@@ -22,7 +22,7 @@ const FilterCheckbox = memo(({
           onChange={handleOnChange}
         />
         <span className="checkbox__pseudo-item" />
-      </div>
+      </span>
       <span className="checkbox__text">{checkboxText}</span>
     </label>
 

@@ -11,7 +11,7 @@
 
 .card__image {
   width: 100%;
-  aspect-ratio: 1.8;
+  aspect-ratio: 1.785;
   object-fit: cover;
   position: relative;
 }
