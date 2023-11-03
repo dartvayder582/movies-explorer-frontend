@@ -1,0 +1,244 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px;
+}
+
+.navbar_logged-in {
+  flex-basis: 675px;
+  flex-shrink: 0.68;
+}
+
+.navbar__links {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.navbar__links_logged-in {
+  width: 100%;
+  gap: 16px;
+}
+
+.navbar__link {
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__link_logged-in {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.navbar__link-signup,
+.navbar__link-signin,
+.navbar__link-profile {
+  font-weight: 500;
+}
+
+.navbar__link_theme_blue {
+  color: #fff;
+}
+
+.navbar__link-signin {
+  min-width: 76px;
+  min-height: 32px;
+  border-radius: 3px;
+  background-color: #2BE080;
+  color: #000;
+}
+
+.navbar__list-item_profile {
+  margin-left: auto;
+}
+
+.navbar__link-profile {
+  min-width: 100px;
+  min-height: 32px;
+  background-color: #F9F9F9;
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 20px;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.navbar__link-profile_active {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__link-movies_active,
+.navbar__link-saved-movies_active {
+  font-weight: 500;
+}
+
+.navbar__list-item_main {
+  display: none;
+}
+
+.navbar-button-open {
+  display: none;
+  margin-left: auto;
+  min-height: 44px;
+  min-width: 44px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../../images/burger_black.svg');
+}
+
+.navbar-button-close {
+  display: none;
+  margin-left: auto;
+  min-height: 35px;
+  min-width: 35px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../../images/burger_close.svg');
+}
+
+.navbar-button-open_white {
+  background-image: url('../../images/burger_white.svg');
+}
+
+.shading {
+  position: fixed;
+  opacity: 0;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .3);
+  transition: all .5s ease;
+}
+
+@media screen and (max-width: 1023px) {
+
+  .navbar-button-close,
+  .navbar-button-open,
+  .navbar__list-item_main {
+    display: block;
+  }
+
+  .navbar-button-close {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  .navbar_logged-in {
+    position: fixed;
+    opacity: 0;
+    z-index: 3;
+    top: 0;
+    height: 100vh;
+    width: 67.8vw;
+    visibility: hidden;
+    right: -100%;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 0;
+    background-color: #fff;
+    box-shadow: -2px 0 1px rgba(0, 0, 0, 0.2);
+    transition: all .5s ease-out;
+  }
+
+  .navbar__links_logged-in {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 105px;
+    gap: 24px;
+  }
+
+  .shading_active,
+  .navbar_active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .navbar_active {
+    right: 0;
+  }
+
+  .navbar__list-item_profile {
+    margin: auto 0 90px;
+  }
+
+  .navbar__link-movies,
+  .navbar__link-saved-movies,
+  .navbar__link-main {
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.78px;
+    padding-bottom: 4px;
+  }
+
+  .navbar__link-movies_active,
+  .navbar__link-saved-movies_active,
+  .navbar__link-main_active {
+    border-bottom: 2px solid #000;
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+  .navbar {
+    gap: 14px;
+  }
+
+  .navbar_logged-in {
+    width: 100vw;
+  }
+
+  .navbar__links {
+    gap: 17px;
+  }
+
+  .navbar__links_logged-in {
+    padding-top: 85px;
+  }
+
+  .navbar__list-item_profile {
+    margin-bottom: 46px;
+  }
+
+  .navbar__link-signin,
+  .navbar__link-signup {
+    font-size: 10px;
+  }
+
+  .navbar__link-signin {
+    min-width: 54px;
+    min-height: 26px;
+  }
+
+  .navbar__link-movies,
+  .navbar__link-saved-movies,
+  .navbar__link-main {
+    padding-bottom: 7px;
+  }
+
+  .navbar-button-open {
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  .navbar-button-close {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+}

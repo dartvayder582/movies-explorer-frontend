@@ -1,0 +1,273 @@
+/* form and modifiers */
+.form {
+  outline: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.form_auth {
+  max-width: 396px;
+  margin-top: 30px;
+}
+
+.form_profile {
+  max-width: 410px;
+}
+
+.form_search {
+  max-width: 100%;
+  padding: 60px 70px 70px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+/* form title */
+.form__heading {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.form__heading_auth {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form__heading_profile {
+  margin-bottom: 107px;
+  text-align: center;
+}
+
+/* form fiedsets */
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+}
+
+.form__fieldset_profile {
+  margin-bottom: 155px;
+}
+
+.form__fieldset_auth {
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  margin-bottom: 24px;
+}
+
+.form__fieldset_search {
+  min-height: 46px;
+  position: relative;
+}
+
+.form__fieldset_checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+/* labels for form inputs */
+.form__label {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.form__label_auth {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #A0A0A0;
+}
+
+.form__label_profile {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13.31px;
+  color: #000;
+}
+
+/* form inputs */
+.form__input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+.form__input:focus {
+  font-weight: 500;
+  outline: none;
+}
+
+.form__input_auth {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  line-height: 16px;
+}
+
+.form__input_profile {
+  text-align: right;
+  font-size: 11px;
+  line-height: 13.31px;
+  min-height: 14px;
+}
+
+.form__input_search {
+  margin-bottom: 40px;
+  padding: 14px 22px;
+  line-height: 17px;
+  border-radius: 40px;
+}
+
+.form__input_search,
+.form__input_auth {
+  font-size: 13px;
+  background-color: #F9F9F9;
+  min-height: 46px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.form__input_search:focus,
+.form__input_auth:focus {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.form__input_type_error {
+  color: #EE3465;
+}
+
+/* form submit buttons */
+.form__submit-button {
+  padding: 0;
+  margin: 0;
+  background-color: #FF6838;
+}
+
+.form__submit-button_profile,
+.form__submit-button_auth {
+  margin-top: 20px;
+  width: 100%;
+  height: 45px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+.form__submit-button_search {
+  width: 80px;
+  height: 34px;
+  border-radius: 40px;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  bottom: 6px;
+  background-image: url('../../images/search-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* form errors */
+.form__error {
+  margin: 0;
+  padding: 0;
+  min-height: 12px;
+  display: block;
+  opacity: 0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+}
+
+.form__error_visible {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .form_search {
+    padding: 80px 30px 50px;
+  }
+
+  .form_profile {
+    margin-bottom: 35px;
+  }
+
+  .form__heading_profile {
+    margin-bottom: 80px;
+  }
+
+  .form__fieldset_profile {
+    margin-bottom: 145px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form_auth {
+    margin: 56px 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form_profile {
+    margin: 70px 30px 40px;
+  }
+
+  .form_search {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .form__heading_auth {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+
+  .form__heading_profile {
+    margin-bottom: 63px;
+  }
+
+  .form__fieldset_auth {
+    margin-bottom: 100px;
+  }
+
+  .form__fieldset_profile {
+    margin-bottom: 305px;
+  }
+
+  .form__input_search {
+    font-size: 11px;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+
+  .form__submit-button_profile,
+  .form__submit-button_auth {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+
+  .form__submit-button_profile,
+  .form__submit-button_auth {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}
