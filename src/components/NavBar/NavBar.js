@@ -1,19 +1,19 @@
 import { useState, useEffect, memo } from 'react';
 import { NavLink } from 'react-router-dom';
-// import AnimatedNavbar from './animation/AnimatedNavbar';
-// import { AnimatePresence } from 'framer-motion';
 import './NavBar.css'
 
 const NavBar = memo(({
   items,
   isLoggedIn,
   location,
-  // onSignOut
 }) => {
   const [isShowMobileNavbar, setIsShowMobileNavbar] = useState(false);
 
   useEffect(() => {
-    setIsShowMobileNavbar(false);
+    if (isShowMobileNavbar) {
+      setIsShowMobileNavbar(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   const showMobileNav = () => {
@@ -63,7 +63,6 @@ const NavBar = memo(({
         : ''}
 
     </>
-
   )
 })
 

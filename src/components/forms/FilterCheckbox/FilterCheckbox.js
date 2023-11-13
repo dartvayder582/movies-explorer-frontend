@@ -25,7 +25,6 @@ const FilterCheckbox = memo(({
       </span>
       <span className="checkbox__text">{checkboxText}</span>
     </label>
-
   )
 })
 

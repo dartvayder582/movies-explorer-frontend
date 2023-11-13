@@ -2,17 +2,25 @@
   padding: 70px 70px 80px;
 }
 
+.cards__message {
+  margin: 0;
+  text-align: center;
+  color: #A0A0A0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
+
 .cards__items {
   padding-bottom: 30px;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   row-gap: 32px;
   column-gap: 20px;
 }
 
 .cards__show-more {
-  visibility: visible;
   margin: 50px 0 0;
   width: 100%;
   min-height: 36px;
@@ -24,10 +32,6 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14.5px;
-}
-
-.cards__show-more_hidden {
-  visibility: hidden;
 }
 
 @media screen and (max-width: 1023px) {

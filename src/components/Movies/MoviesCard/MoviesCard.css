@@ -9,6 +9,12 @@
   box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.05);
 }
 
+.card__link {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 .card__image {
   width: 100%;
   aspect-ratio: 1.785;
