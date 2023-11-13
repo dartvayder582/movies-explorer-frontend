@@ -2,9 +2,12 @@
 
 ## Макет проекта в Figma: light-2
 
-Временные решения:
+## Ссылки на проект
 
-- вместо user context используется объект с данными
-- стейт перемнные для isLoggedIn (для состояния залогиненного пользователя) и isShowApiError (для отображения ошибки api) переключаются вручную в App.js
-- Все роуты не защищены
+Pull request: https://github.com/dartvayder582/movies-explorer-frontend/pull/2
+
+IP-адрес: 158.160.26.103
+
+Frontend: https://movie.finder.nomoredomainsrocks.ru
+
 
