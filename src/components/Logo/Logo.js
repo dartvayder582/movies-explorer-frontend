@@ -6,6 +6,6 @@ const Logo = memo(() => {
   return (
     <Link className='logo button-style button-style_scale' to='/' />
   )
-})
+});
 
 export default Logo;

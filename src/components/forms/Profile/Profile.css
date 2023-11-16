@@ -8,29 +8,30 @@
 
 /* profile inputs */
 .profile__input-area {
+  margin-top: 12px;
   min-height: 48px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   border-radius: 8px;
-  border-bottom: 1px solid transparent;
   position: relative;
   transition: all 0.3s ease-in-out;
+}
+
+.profile__input-area:first-of-type {
+  margin-top: 0;
 }
 
 .profile__input-area::before {
   content: '';
   box-sizing: border-box;
   height: 1px;
-  transform: scaleX(1);
-  opacity: 1;
   width: 100%;
   position: absolute;
-  bottom: -1px;
+  top: -12px;
   left: 0;
   background-color: #E8E8E8;
-  transition: all 0.3s ease;
 }
 
 .profile__input-area_edit-mode:focus-within {
@@ -39,12 +40,7 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.profile__input-area_edit-mode:focus-within::before {
-  transform: scaleX(0);
-  opacity: 0;
-}
-
-.profile__input-area:last-of-type::before {
+.profile__input-area:first-of-type::before {
   display: none;
 }
 

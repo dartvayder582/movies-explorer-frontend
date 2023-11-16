@@ -1,61 +1,74 @@
-import { useState, memo, useEffect, useRef } from "react";
-// import { Link } from 'react-router-dom';
-import ErrorMessageApi from '../../ErrorMessageApi/ErrorMessageApi';
+import { useState, memo, useEffect, useRef, useContext } from "react";
+import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
+import ApiMessage from '../../ApiMessage/ApiMessage';
+import { useValidationForm } from "../../../utils/hooks/useValidationForm";
 import './Profile.css';
 import '../forms.css';
 
 const Profile = memo(({
   isLoad,
   onUpdateUser,
-  isShowApiError,
+  isShowApiMessage,
+  isSuccessApiMessage,
+  apiMessageText,
+  hideApiMessage,
   onSignOut,
+  regex,
 }) => {
-  // const currentUser = React.useContext(CurrentUserContext);
-  //for dev
-  const currentUser = {
-    name: 'Иван',
-    email: 'pochta@yandex.ru',
-  };
+  const currentUser = useContext(CurrentUserContext);
 
-  const [isEditMode, setIsEditMode] = useState(false);
-  const [formValue, setFormValue] = useState({
-    name: '',
-    email: ''
+  const {
+    values,
+    setValues,
+    handleChange,
+    errors,
+    isValid,
+  } = useValidationForm({
+    name: currentUser.name,
+    email: currentUser.email,
   });
+  // режим редактирования
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  // валидация
+  const [isFormValid, setIsFormValid] = useState(false);
+  useEffect(() => {
+    if (isValid && ((values.name !== currentUser.name) || (values.email !== currentUser.email))) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values])
+
   const nameRef = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormValue({
-      ...formValue,
-      [name]: value
-    });
+  const handleInputChange = (e) => {
+    handleChange(e);
+    hideApiMessage();
   }
 
   useEffect(() => {
-
-    setFormValue({
+    setIsEditMode(false);
+    setValues({
       name: currentUser.name,
       email: currentUser.email
     })
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser]);
 
   const handleEditModeClick = () => {
     setIsEditMode(true);
+    hideApiMessage();
     nameRef.current.focus();
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsEditMode(false);
-    // if (!formValue.name || !formValue.email) {
-    //   return;
-    // }
-    // onUpdateUser({
-    //   name: formValue.name,
-    //   email: formValue.email,
-    // });
+    onUpdateUser({
+      name: values.name,
+      email: values.email,
+    });
   }
 
   return (
@@ -67,7 +80,7 @@ const Profile = memo(({
             <div className={`profile__input-area ${isEditMode ? 'profile__input-area_edit-mode' : ''}`}>
               <label htmlFor="name" className="form__label form__label_profile">Имя</label>
               <input
-                className="form__input form__input_profile"
+                className={`form__input form__input_profile ${errors.name && 'form__input_type_error'}`}
                 required
                 placeholder="Например: Виталий"
                 id="name"
@@ -75,33 +88,43 @@ const Profile = memo(({
                 type="text"
                 minLength="2"
                 maxLength="30"
-                value={formValue.name}
-                onChange={handleChange}
+                value={values.name || ''}
+                pattern={regex.name}
+                onChange={handleInputChange}
                 ref={nameRef}
                 readOnly={!isEditMode} />
             </div>
+            <span className="form__error">{errors.name}</span>
             <div className={`profile__input-area ${isEditMode ? 'profile__input-area_edit-mode' : ''}`}>
               <label htmlFor="email" className="form__label form__label_profile">E-mail</label>
               <input
-                className="form__input form__input_profile"
+                className={`form__input form__input_profile ${errors.email && 'form__input_type_error'}`}
                 required
                 placeholder="Например: pochta@yandex.ru|"
                 id="email"
                 name="email"
                 type="email"
-                value={formValue.email}
-                onChange={handleChange}
+                value={values.email || ''}
+                pattern={regex.email}
+                onChange={handleInputChange}
                 readOnly={!isEditMode} />
             </div>
+            <span className="form__error">{errors.email}</span>
           </fieldset>
-          <ErrorMessageApi
-            isShowApiError={isShowApiError} />
+          <ApiMessage
+            isShowApiMessage={isShowApiMessage}
+            isSuccessApiMessage={isSuccessApiMessage}
+            apiMessageText={apiMessageText} />
           {isEditMode ?
             <button
               type="submit"
-              className="button-style button-style_opacity form__submit-button form__submit-button_profile"
+              className={
+                `button-style
+                form__submit-button
+                form__submit-button_profile
+                ${!isFormValid ? 'form__submit-button_disable' : 'button-style_opacity'}`}
               aria-label="Сохранить"
-              disabled={isLoad} >
+              disabled={isLoad || !isFormValid} >
               {!isLoad ? "Сохранить" : "Сохранение..."}
             </button>
             :
